@@ -7,7 +7,6 @@ A powerful ASP.NET Core 9 Web API for creating, managing, and processing markdow
 - **Markdown Processing**: Create and manage notes written in Markdown format
 - **Grammar Checking**: Integrated LanguageTool API for real-time grammar and spell checking
 - **HTML Rendering**: Convert Markdown to HTML using Markdig library
-- **File Upload Support**: RESTful API with file upload capabilities
 - **Persistent Storage**: Entity Framework Core with SQL Server backend
 - **RESTful Architecture**: Clean API design following REST principles
 
