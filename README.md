@@ -4,7 +4,6 @@ A powerful ASP.NET Core 9 Web API for creating, managing, and processing markdow
 
 ## 🚀 Features
 
-<<<<<<< HEAD
 ### Core Features
 
 - **Markdown Processing**: Create and manage notes written in Markdown format
@@ -59,7 +58,6 @@ A powerful ASP.NET Core 9 Web API for creating, managing, and processing markdow
 - **Markdown Processing**: [Markdig](https://github.com/xoofx/markdig)
 - **Grammar Checking**: [LanguageTool API](https://languagetool.org/)
 - **Architecture**: RESTful Web API
->>>>>>> 785ba6352c5d33522cadea6507a46c554aa94e40
 
 ## 📋 Prerequisites
 
@@ -72,33 +70,23 @@ Before running this application, make sure you have the following installed:
 ## 🔧 Installation
 
 1. **Clone the repository**
-<<<<<<< HEAD
-
-=======
->>>>>>> 785ba6352c5d33522cadea6507a46c554aa94e40
    ```bash
    git clone https://github.com/King-MRG1/Notes-Api.git
    cd Notes-Api
    ```
 
 2. **Restore dependencies**
-<<<<<<< HEAD
 
-=======
->>>>>>> 785ba6352c5d33522cadea6507a46c554aa94e40
    ```bash
    dotnet restore
    ```
 
 3. **Update database connection string**
-<<<<<<< HEAD
 
    Edit `appsettings.json` and update the connection string:
 
-=======
    
    Edit `appsettings.json` and update the connection string:
->>>>>>> 785ba6352c5d33522cadea6507a46c554aa94e40
    ```json
    {
      "ConnectionStrings": {
@@ -108,24 +96,18 @@ Before running this application, make sure you have the following installed:
    ```
 
 4. **Apply database migrations**
-<<<<<<< HEAD
 
-=======
->>>>>>> 785ba6352c5d33522cadea6507a46c554aa94e40
    ```bash
    dotnet ef database update
    ```
 
-<<<<<<< HEAD
 5. **Configure LanguageTool API (Optional)**
 
    Add your LanguageTool configuration in `appsettings.json`:
 
-=======
 4. **Configure LanguageTool API (Optional)**
    
    Add your LanguageTool configuration in `appsettings.json`:
->>>>>>> 785ba6352c5d33522cadea6507a46c554aa94e40
    ```json
    {
      "LanguageTool": {
@@ -138,15 +120,11 @@ Before running this application, make sure you have the following installed:
 ## 🚀 Running the Application
 
 1. **Start the application**
-<<<<<<< HEAD
 
-=======
->>>>>>> 785ba6352c5d33522cadea6507a46c554aa94e40
    ```bash
    dotnet run
    ```
 
-<<<<<<< HEAD
 2. **Access the API**
 
    The API will be available at:
@@ -177,7 +155,6 @@ Before running this application, make sure you have the following installed:
 
 ### Example Request Body
 
-=======
 ## 📚 API Endpoints
 
 ### Notes Management
@@ -192,7 +169,6 @@ Before running this application, make sure you have the following installed:
 - `GET /Note/{id}/render` - Get HTML rendered version of a note
 
 ### Example Request Body
->>>>>>> 785ba6352c5d33522cadea6507a46c554aa94e40
 ```json
 {
   "title": "My Note",
@@ -200,7 +176,6 @@ Before running this application, make sure you have the following installed:
 }
 ```
 
-<<<<<<< HEAD
 ### Example Response Bodies
 
 **Get All Notes Response:**
@@ -251,8 +226,6 @@ Before running this application, make sure you have the following installed:
 }
 ```
 
-=======
->>>>>>> 785ba6352c5d33522cadea6507a46c554aa94e40
 ## 🏗️ Project Structure
 
 ```
@@ -297,40 +270,6 @@ The project follows a **layered architecture** with clear separation of concerns
 ## 🔧 Configuration
 
 ### Database Configuration
-
-=======
-├── bin/
-├── Controllers/
-│   └── NoteController.cs
-├── Dto/
-│   ├── CreateNoteDto.cs
-│   ├── UpdateNote.cs
-│   ├── ViewAllNotesDto.cs
-│   └── ViewNoteDto.cs
-├── Interface/
-│   └── INoteRepository.cs
-├── Mapping/
-│   └── NoteMapping.cs
-├── Migrations/
-├── Models/
-│   ├── Notes.cs
-│   └── NotesContext.cs
-├── obj/
-├── Properties/
-├── Repository/
-│   └── NoteRepository.cs
-├── appsettings.Development.json
-├── appsettings.json
-├── NotesApi.csproj
-├── NotesApi.http
-├── NotesApi.sln
-└── Program.cs
-```
-
-## 🔧 Configuration
-
-### Database Configuration
->>>>>>> 785ba6352c5d33522cadea6507a46c554aa94e40
 The application uses Entity Framework Core with SQL Server. Configure your connection string in `appsettings.json`:
 
 ```json
@@ -342,10 +281,7 @@ The application uses Entity Framework Core with SQL Server. Configure your conne
 ```
 
 ### LanguageTool Configuration
-<<<<<<< HEAD
 
-=======
->>>>>>> 785ba6352c5d33522cadea6507a46c554aa94e40
 ```json
 {
   "LanguageTool": {
@@ -356,7 +292,6 @@ The application uses Entity Framework Core with SQL Server. Configure your conne
 }
 ```
 
-<<<<<<< HEAD
 ## 🔍 Error Handling
 
 The application implements comprehensive error handling:
@@ -384,8 +319,6 @@ The application implements comprehensive error handling:
 - Structured error messages with context information
 - Exception details preserved for debugging
 
-=======
->>>>>>> 785ba6352c5d33522cadea6507a46c554aa94e40
 ## 🧪 Testing
 
 Run the test suite using:
@@ -396,7 +329,6 @@ dotnet test
 
 ## 📦 NuGet Packages
 
-<<<<<<< HEAD
 ### Core Dependencies
 
 - `Microsoft.EntityFrameworkCore.SqlServer` - SQL Server database provider
@@ -416,24 +348,19 @@ dotnet test
 - `Microsoft.EntityFrameworkCore.Design` - EF Core design-time services
 - `Microsoft.Build.Locator` - MSBuild API support
 - `Microsoft.CodeAnalysis.*` - Roslyn compiler platform integration
-=======
 Key dependencies include:
 - `Microsoft.EntityFrameworkCore.SqlServer`
 - `Microsoft.EntityFrameworkCore.Tools`
 - `Markdig`
 - `Swashbuckle.AspNetCore`
 - `Microsoft.AspNetCore.OpenApi`
->>>>>>> 785ba6352c5d33522cadea6507a46c554aa94e40
 
 ## 🚀 Deployment
 
 ### Local/Production Deployment
 
 1. **Publish the application**
-<<<<<<< HEAD
 
-=======
->>>>>>> 785ba6352c5d33522cadea6507a46c554aa94e40
    ```bash
    dotnet publish -c Release -o ./publish
    ```
