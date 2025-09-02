@@ -44,7 +44,6 @@ A powerful ASP.NET Core 9 Web API for creating, managing, and processing markdow
 - **Dependency Injection**: Native ASP.NET Core DI container
 - **DTO Pattern**: For clean API contracts
 - **RESTful Architecture**: Following REST principles and conventions
-=======
 - **Markdown Processing**: Create and manage notes written in Markdown format
 - **Grammar Checking**: Integrated LanguageTool API for real-time grammar and spell checking
 - **HTML Rendering**: Convert Markdown to HTML using Markdig library
