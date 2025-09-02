@@ -162,3 +162,4 @@ D:\coding\DotNET\NotesApi\obj\Debug\net9.0\NotesApi.pdb
 D:\coding\DotNET\NotesApi\obj\Debug\net9.0\NotesApi.genruntimeconfig.cache
 D:\coding\DotNET\NotesApi\obj\Debug\net9.0\ref\NotesApi.dll
 D:\coding\DotNET\NotesApi\bin\Debug\net9.0\Markdig.dll
+d:\coding\DotNET\NotesApi\obj\Debug\net9.0\NotesApi.sourcelink.json

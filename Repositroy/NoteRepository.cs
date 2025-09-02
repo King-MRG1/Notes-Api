@@ -91,31 +91,29 @@ public class NoteRepository : INoteRepository
         }
     }
 
-    public async Task<string> GetMarkDownAsync(int id)
+    public string GetMarkDown(string content)
     {
         try
         {
-            var note = await _context.Notes.FindAsync(id);
-            if (note == null) return string.Empty;
-            string html = Markdown.ToHtml(note.Content);
+            var pipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().Build();
+            string html = Markdown.ToHtml(content, pipeline);
             return html;
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error in GetMarkDownAsync: {ex.Message}");
+            Console.WriteLine($"Error in GetMarkDown: {ex.Message}");
             return string.Empty;
         }
     }
 
-    public async Task<string> CheckerAsync(int id)
+    public async Task<string> CheckerAsync(string content)
     {
         try
         {
-            var note = await _context.Notes.FindAsync(id);
-            if (note == null) return "";
+
 
             var bodyFormat = new FormUrlEncodedContent(new Dictionary<string, string>{
-            {"text",note.Content.ToLower() },
+            {"text",content.ToLower() },
             {"language","en-US" }
         });
 

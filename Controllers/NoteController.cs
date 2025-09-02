@@ -1,4 +1,5 @@
 using System.Text.Json;
+using Markdig;
 using Microsoft.AspNetCore.Mvc;
 
 [Route("[controller]")]
@@ -30,15 +31,19 @@ public class NoteController : ControllerBase
     [HttpGet("markdown/{id}")]
     public async Task<IActionResult> GetNoteMarkdown(int id)
     {
-        var markdown = await _noteRepository.GetMarkDownAsync(id);
-        if (string.IsNullOrEmpty(markdown)) return NotFound();
+        var note = await _noteRepository.GetNoteByIdAsync(id);
+        if (note == null) return NotFound();
+        var markdown = _noteRepository.GetMarkDown(note.Content);
         return Ok(new { html = markdown });
     }
 
     [HttpGet("checker/{id}")]
     public async Task<IActionResult> CheckNoteGrammar(int id)
     {
-        var result = await _noteRepository.CheckerAsync(id);
+        var note = await _noteRepository.GetNoteByIdAsync(id);
+        if (note == null) return NotFound();
+
+        var result = await _noteRepository.CheckerAsync(note.Content);
         if (string.IsNullOrEmpty(result)) return NotFound();
         return Ok(JsonDocument.Parse(result));
     }
@@ -53,6 +58,38 @@ public class NoteController : ControllerBase
         if (!result) return StatusCode(500);
 
         return Ok("Note created successfully");
+    }
+    [HttpPost("Upload-file-Markdown")]
+    public async Task<IActionResult> UploadFileMarkdown(IFormFile file)
+    {
+        if (file == null || file.Length == 0) return BadRequest("No file uploaded.");
+
+        string content;
+
+        var reader = new StreamReader(file.OpenReadStream());
+
+        content = await reader.ReadToEndAsync();
+
+        var html = _noteRepository.GetMarkDown(content);
+
+        return Content(html, "text/html");
+    }
+
+    [HttpPost("Upload-file-Checker")]
+    public async Task<IActionResult> UploadFileChecker(IFormFile file)
+    {
+        if (file == null || file.Length == 0) return BadRequest("No file uploaded.");
+
+        string content;
+
+        var reader = new StreamReader(file.OpenReadStream());
+
+        content = await reader.ReadToEndAsync();
+
+        var result = await _noteRepository.CheckerAsync(content);
+        if (string.IsNullOrEmpty(result)) return NotFound();
+
+        return Ok(JsonDocument.Parse(result));
     }
 
     [HttpPut("{id}")]
